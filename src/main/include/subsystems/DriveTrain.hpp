@@ -1,17 +1,19 @@
-#ifndef WESTCOAST_H
-#define WESTCOAST_H
+#ifndef DRIVETRAIN_H
+#define DRIVETRAIN_H
 
-#include "../Constants.h"
 #include <frc2/command/SubsystemBase.h>
-#include <ctre/phoenix/motorcontrol/can/TalonSRX.h>
+#include <ctre/Phoenix.h>
+
+#include "Constants.h"
 
 using namespace ctre::phoenix::motorcontrol::can;
+using namespace DriveTrainVariables;
 
-class WestCoast : frc2::SubsystemBase
+class DriveTrain : frc2::SubsystemBase
 {
     public:
-        WestCoast();
-        void drive(double y, double x);
+        DriveTrain();
+        void drive(double xSpeed, double zRotation);
     private:
         /* TalonSRX's do not have a callable constructor, meaning they must constructs once declared, such as below */
         TalonSRX       LEFT_MASTER { L_MASTER_ID };
@@ -20,4 +22,4 @@ class WestCoast : frc2::SubsystemBase
         TalonSRX       RIGHT_SLAVE { R_SLAVE_ID  };
 };
 
-#endif
+#endif // DRIVETRAIN_H

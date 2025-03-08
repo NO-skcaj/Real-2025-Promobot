@@ -1,11 +1,11 @@
-#include "../include/subsytems/WestCoast.hpp"
+#include "../../include/subsystems/DriveTrain.hpp"
 
 /* All init code for our subsystem is called in the constructor, this saves us from writing a 'init()' function */
-WestCoast::WestCoast()
+DriveTrain::DriveTrain()
 {
 }
 
-void WestCoast::drive(double xSpeed, double zRotation)
+void DriveTrain::drive(double xSpeed, double zRotation)
 {
     xSpeed = std::clamp(xSpeed, -1.0, 1.0);
     zRotation = std::clamp(zRotation, -1.0, 1.0);

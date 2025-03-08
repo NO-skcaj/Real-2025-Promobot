@@ -4,7 +4,10 @@
 
 #include <frc/TimedRobot.h>
 #include <frc/Joystick.h>
-#include "include/Headers.h"
+#include "../include/subsystems/DriveTrain.hpp"
+#include "../include/Constants.h"
+
+using namespace IO;
 
 class Robot : public frc::TimedRobot {
  public:
@@ -27,8 +30,8 @@ class Robot : public frc::TimedRobot {
 
  private:
   /* Declare all of subsystems */
-  WestCoast DRIVE;
-  frc::Joystick Joystick { CONTROLLER_ID };
+  DriveTrain DRIVE;
+  frc::Joystick Joystick { DRIVER_CONTROLLER };
 };
 
 int main() {
